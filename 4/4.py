@@ -1,4 +1,6 @@
-with open('4/input.txt') as f:
-    pairs = [sorted(list(map(int, pair.split('-'))) for pair in line.split(',')) for line in f.readlines()]
-print(sum([int(b >= d or a == c) for (a,b),(c,d) in pairs])) # task 1
-print(sum([int(b >= c) for (_,b),(c,_) in pairs])) # task 2
+pairs = [[p.split('-') for p in s.split(',')] for s in open('4/input.txt').readlines()]
+ranges = [[set(range(int(l), int(h)+1)) for l,h in pair] for pair in pairs]
+
+print(sum([l>=r or r>=l for l,r in ranges]), sum([len(l&r) != 0 for l,r in ranges]))
+
+# 3 lines
