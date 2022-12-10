@@ -1,10 +1,7 @@
-cmds, xs = open('10/input.txt').read().replace('addx', 'noop\naddx').split('\n'), [1]
+inp, xs, pxs = open('10/input.txt').read().replace('addx', '0\n').replace('noop', '0'), [1], [1]
+[(xs.append(xs[-1]+int(v)), pxs.append(xs[-1]-(i+1)%40) ) for i,v in enumerate(inp.split('\n'))]
 
-for i,cmd in enumerate(cmds):
-    v = 0 if cmd == 'noop' else int(cmd.split()[1])
-    xs.append(xs[-1] + v)
+print(sum([xs[i-1]*i for i in range(len(xs))][20::40])) # task 1
+print('\n'.join([''.join([' █'[abs(px)<2] for px in pxs[l:l+40]]) for l in range(0,240,40)])) # task 2
 
-print(sum([x*((i+1)*40-20) for i,x in enumerate(xs[20::40])])) # task 1
-print(''.join([' █'[abs(x % 40 - i % 40) <= 1] + '\n' * (i % 40 == 39) for i,x in enumerate(xs)])) # task 2
-
-# 6 lines
+# 4 lines
