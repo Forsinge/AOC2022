@@ -1,4 +1,4 @@
-lines = open('03/input.txt').read().split('\n'), 
+lines = open('03/input.txt').read().split('\n')
 priority = ' abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 halves = [map(set, (s[len(s)//2:], s[:len(s)//2])) for s in lines]
 triples = [map(set, lines[i:i+3]) for i in range(0, len(lines), 3)]
