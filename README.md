@@ -7,3 +7,5 @@ Challenging myself this year to complete the tasks in as few lines of code as po
 Empty lines don't count.
 
 The result is unintelligible but hopefully somewhat satisfying code.
+
+Update: a few days in i learned that "code golf" exists. It is similar but not quite what I'm doing as I'm merely aiming to minimize lines.
