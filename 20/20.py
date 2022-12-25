@@ -17,3 +17,5 @@ p2 = [l[1] for l in mix(get_nums(2), 10)]
 z1,z2 = p1.index(0), p2.index(0)
 p1, p2 = p1[z1:] + p1[:z1], p2[z2:] + p2[:z2]
 print(get_grove(p1), get_grove(p2))
+
+# 17 lines
